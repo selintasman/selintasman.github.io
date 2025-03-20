@@ -3,14 +3,15 @@
     "name": "startbootstrap-clean-blog",
     "version": "6.0.9",
     "scripts": {
-        "build": "npm run clean && npm run build:pug && npm run build:scss && npm run build:scripts && npm run build:assets",
+        "build": "npm run build:scss && npm run build:scripts && npm run build:assets",
         "build:assets": "node scripts/build-assets.js",
         "build:pug": "node scripts/build-pug.js",
         "build:scripts": "node scripts/build-scripts.js",
         "build:scss": "node scripts/build-scss.js",
-        "clean": "node scripts/clean.js",
         "start": "npm run build && node scripts/start.js",
-        "start:debug": "npm run build && node scripts/start-debug.js"
+        "start:debug": "npm run build && node scripts/start-debug.js",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d dist"
     },
     "description": "Clean Blog is a Medium inspired blog theme for Bootstrap.",
     "keywords": [
@@ -43,6 +44,7 @@
         "browser-sync": "2.29.1",
         "chokidar": "3.5.3",
         "concurrently": "6.3.0",
+        "gh-pages": "^6.3.0",
         "postcss": "8.4.21",
         "prettier": "2.8.6",
         "pug": "3.0.2",
